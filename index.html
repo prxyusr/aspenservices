@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspen — Voice Actor & Voice Commissions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        themeBlack: '#0D0D11',
+                        themeCard: '#16151D',
+                        themePurple: '#7B2CBF',
+                        themePurpleLight: '#9D4EDD',
+                        themeRed: '#E63946',
+                        themeRedDark: '#9E1B28',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Clean Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0D0D11;
+            color: #FFFFFF;
+        }
+        /* Style standard HTML audio element to match dark theme */
+        audio::-webkit-media-controls-panel {
+            background-color: #16151D;
+        }
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="selection:bg-themeRed selection:text-white antialiased">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="border-b border-white/10 bg-themeBlack/90 sticky top-0 z-50 backdrop-blur-sm">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- EDIT YOUR BRANDING / NAME HERE -->
+            <a href="#" class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-themeRed inline-block"></span>
+                <span class="font-bold text-xl tracking-tight text-white">Aspen Services<span class="text-themePurpleLight text-sm font-medium"></span></span>
+            </a>
+
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold text-gray-300">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#demos" class="hover:text-white transition">Demos</a>
+                <a href="#rates" class="hover:text-white transition">Rates</a>
+                <a href="#tos" class="hover:text-white transition">Terms</a>
+            </nav>
+
+            <a href="#order" class="bg-themeRed hover:bg-themeDarkRed text-white px-4 py-2 rounded-lg text-sm font-bold transition">
+                Book Voice
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-10 space-y-16">
+
+        <!-- 1. HERO / ABOUT SECTION -->
+        <section id="about" class="bg-themeCard border border-white/10 rounded-2xl p-6 sm:p-10">
+            <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                
+                <!-- EDIT PROFILE AVATAR / IMAGE HERE -->
+                <div class="flex-shrink-0">
+                    <img src="https://placehold.co/160x160/7B2CBF/ffffff?text=AVATAR" 
+                         alt="Aspen Avatar" 
+                         class="w-32 h-32 md:w-40 md:h-40 rounded-2xl border-2 border-themePurple object-cover">
+                </div>
+
+                <div class="space-y-4 text-center md:text-left flex-grow">
+                    <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <!-- EDIT YOUR STATUS HERE -->
+                        <span>Commissions Open</span>
+                    </div>
+
+                    <!-- EDIT YOUR NAME & BIO HERE -->
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        Hi, I'm <span class="text-themePurpleLight">Aspen</span>!
+                    </h1>
+
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                        <!-- EDIT YOUR SHORT BIO HERE -->
+                        I am a freelance voice actor specializing in character dialogue, indie video games, YouTube animations, and online promos. I record with professional studio equipment and deliver clean, high-quality audio with fast turnaround times.
+                    </p>
+
+                    <!-- EDIT SOCIAL LINKS HERE -->
+                    <div class="flex flex-wrap gap-3 pt-2 justify-center md:justify-start">
+                        <a href="https://discord.com" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-gray-200 transition flex items-center space-x-2">
+                            <i class="fa-brands fa-discord text-themePurpleLight"></i>
+                            <span>aspen4030</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-gray-200 transition flex items-center space-x-2">
+                            <i class="fa-brands fa-tiktok text-themeRed"></i>
+                            <span>@AspenServices</span>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-gray-200 transition flex items-center space-x-2">
+                            <i class="fa-brands fa-youtube text-themeRed"></i>
+                            <span>Aspen Services</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. VOICE DEMOS / REELS -->
+        <section id="demos" class="space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold text-white flex items-center">
+                    <span class="w-2.5 h-6 bg-themePurple rounded-full mr-3"></span> Voice Demos
+                </h2>
+                <p class="text-xs text-gray-400 mt-1">Listen to sample voice reels across different genres.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- DEMO ITEM 1 -->
+                <div class="bg-themeCard border border-white/10 rounded-xl p-5 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-white text-base">Character & Video Games</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themePurple/20 text-themePurpleLight border border-themePurple/30">Character</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Villains, heroes, NPCs, and energetic battle screams.</p>
+                    
+                    <!-- EDIT AUDIO SRC HERE -->
+                    <audio controls class="w-full h-10 mt-2">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- DEMO ITEM 2 -->
+                <div class="bg-themeCard border border-white/10 rounded-xl p-5 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-white text-base">Commercial & Trailers</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themeRed/20 text-themeRed border border-themeRed/30">Commercial</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Deep cinematic narration, hype promos, and ad reads.</p>
+                    
+                    <!-- EDIT AUDIO SRC HERE -->
+                    <audio controls class="w-full h-10 mt-2">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- DEMO ITEM 3 -->
+                <div class="bg-themeCard border border-white/10 rounded-xl p-5 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-white text-base">Animation & Cartoons</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themePurple/20 text-themePurpleLight border border-themePurple/30">Animation</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Quirky, funny, and expressive voice acting for shorts.</p>
+                    
+                    <!-- EDIT AUDIO SRC HERE -->
+                    <audio controls class="w-full h-10 mt-2">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- DEMO ITEM 4 -->
+                <div class="bg-themeCard border border-white/10 rounded-xl p-5 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-white text-base">Short Memes / Alerts</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themeRed/20 text-themeRed border border-themeRed/30">Personal</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Twitch alerts, custom meme voicelines, and greetings.</p>
+                    
+                    <!-- EDIT AUDIO SRC HERE -->
+                    <audio controls class="w-full h-10 mt-2">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. RATES & PACKAGES -->
+        <section id="rates" class="space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold text-white flex items-center">
+                    <span class="w-2.5 h-6 bg-themeRed rounded-full mr-3"></span> Rates & Pricing
+                </h2>
+                <p class="text-xs text-gray-400 mt-1">Simple transparent pricing for personal and indie projects.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- RATE CARD 1 -->
+                <div class="bg-themeCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase text-themePurpleLight tracking-wider">Tier 1</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Short Clips & Memes</h3>
+                        <p class="text-xs text-gray-400 mt-1">Twitch alerts, short meme voiceovers, personal audio messages.</p>
+
+                        <div class="my-4">
+                            <!-- EDIT PRICE HERE -->
+                            <span class="text-3xl font-extrabold text-white">$15</span>
+                            <span class="text-xs text-gray-400"> / 5$ Every minute above 2</span>
+                        </div>
+
+                        <ul class="text-xs text-gray-300 space-y-2">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> 48-72 hr delivery</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> High quality WAV/MP3</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> 1 free re-take</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> $4 for re-takes</li>
+                        </ul>
+                    </div>
+                    <a href="#order" class="block w-full py-2.5 text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg font-bold text-xs text-white transition">
+                        Select Plan
+                    </a>
+                </div>
+
+                <!-- RATE CARD 2 (FEATURED) -->
+                <div class="bg-themeCard border-2 border-themeRed rounded-2xl p-6 flex flex-col justify-between space-y-4 relative">
+                    <div class="absolute -top-3 right-4 bg-themeRed text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">
+                        Most Popular
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase text-themeRed tracking-wider">Tier 2</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Indie Games & Cartoons</h3>
+                        <p class="text-xs text-gray-400 mt-1">Character dialogue, video game voices, Animations.</p>
+
+                        <div class="my-4">
+                            <!-- EDIT PRICE HERE -->
+                            <span class="text-3xl font-extrabold text-white">$30 - $50</span>
+                            <span class="text-xs text-gray-400"> / up to 250 words</span>
+                        </div>
+
+                        <ul class="text-xs text-gray-200 space-y-2">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themeRed mr-2"></i> 3-4 day delivery</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themeRed mr-2"></i> Clean edited audio files</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themeRed mr-2"></i> 2 free re-takes</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themeRed mr-2"></i> Indie commercial rights</li>
+                        </ul>
+                    </div>
+                    <a href="#order" class="block w-full py-2.5 text-center bg-themeRed hover:bg-themeRedDark rounded-lg font-bold text-xs text-white transition">
+                        Select Plan
+                    </a>
+                </div>
+
+                <!-- RATE CARD 3 -->
+                <div class="bg-themeCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase text-themePurpleLight tracking-wider">Tier 3</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Commercial / Large</h3>
+                        <p class="text-xs text-gray-400 mt-1">Promotional trailers, corporate videos, long scripts.</p>
+
+                        <div class="my-4">
+                            <!-- EDIT PRICE HERE -->
+                            <span class="text-3xl font-extrabold text-white">$75+</span>
+                            <span class="text-xs text-gray-400"> / custom quote</span>
+                        </div>
+
+                        <ul class="text-xs text-gray-300 space-y-2">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> Express delivery available</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> Full buyout options</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> Unlimited tone direction</li>
+                        </ul>
+                    </div>
+                    <a href="#order" class="block w-full py-2.5 text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg font-bold text-xs text-white transition">
+                        Get Custom Quote
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. TERMS OF SERVICE (TOS) -->
+        <section id="tos" class="bg-themeCard border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4">
+            <h2 class="text-xl font-bold text-white flex items-center">
+                <i class="fa-solid fa-file-contract text-themePurpleLight mr-3"></i> Terms of Service & Guidelines
+            </h2>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-gray-300 leading-relaxed list-disc list-inside">
+                <!-- EDIT TOS RULES BELOW -->
+                <li><strong class="text-white">Payment:</strong> Payment is upfront via Paypal and/or Cashapp before final clean audio files are sent.</li>
+                <li><strong class="text-white">Revisions:</strong> Minor tone/speed tweaks are included. Full script rewrites require an extra fee.</li>
+                <li><strong class="text-white">Turnaround:</strong> Standard orders delivered in 48 to 72 hours. Rush options available upon request.</li>
+                <li><strong class="text-white">Restrictions:</strong> Absolutely no AI voice cloning, hate speech, or harassment scripts.</li>
+                <li><strong class="text-white">Notice:</strong> Rules are entirely up too my discretion.</li>
+            </ul>
+        </section>
+
+        <!-- 5. COMMISSION FORM (DISCORD WEBHOOK INTEGRATION) -->
+        <section id="order" class="space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold text-white flex items-center">
+                    <span class="w-2.5 h-6 bg-themePurple rounded-full mr-3"></span> Submit Voice Request
+                </h2>
+                <p class="text-xs text-gray-400 mt-1">Fill out your project details below. Submissions go straight to my Discord!</p>
+            </div>
+
+            <div class="bg-themeCard border border-white/10 rounded-2xl p-6 sm:p-8">
+                <form id="commission-form" class="space-y-5">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Aspen</label>
+                            <input type="text" id="client-name" required placeholder="e.g. Aspen" 
+                                class="w-full bg-themeBlack border border-white/15 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Discord Tag or Email *</label>
+                            <input type="text" id="client-contact" required placeholder="e.g. @username or email@domain.com" 
+                                class="w-full bg-themeBlack border border-white/15 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Project Type</label>
+                            <select id="project-type" class="w-full bg-themeBlack border border-white/15 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition">
+                                <option value="Indie Game">Indie Game</option>
+                                <option value="Animation">Animation / Cartoon</option>
+                                <option value="Meme / Personal">Meme / Personal Greeting</option>
+                                <option value="Commercial">Commercial / Promo</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Estimated Word Count</label>
+                            <input type="number" id="word-count" placeholder="e.g. 150" 
+                                class="w-full bg-themeBlack border border-white/15 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Estimated Budget ($USD)</label>
+                            <input type="text" id="budget" placeholder="e.g. $40" 
+                                class="w-full bg-themeBlack border border-white/15 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Script Link (Google Drive / Pastebin / Doc) *</label>
+                        <input type="url" id="script-link" required placeholder="https://docs.google.com/..." 
+                            class="w-full bg-themeBlack border border-white/15 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1.5">Voice Direction & Tone Notes *</label>
+                        <textarea id="project-notes" rows="4" required placeholder="Describe the voice style, pitch, emotion, or character references." 
+                            class="w-full bg-themeBlack border border-white/15 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition"></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn" 
+                        class="w-full py-3.5 bg-themeRed hover:bg-themeRedDark text-white font-bold rounded-lg transition flex items-center justify-center space-x-2 text-sm">
+                        <i class="fa-brands fa-discord text-lg"></i>
+                        <span>Send Request to Discord</span>
+                    </button>
+                </form>
+
+                <!-- Status Feedback Message -->
+                <div id="form-status" class="hidden mt-4 p-3 rounded-lg text-xs font-bold text-center"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-8 mt-12 text-center text-xs text-gray-500">
+        <div class="max-w-4xl mx-auto px-4 space-y-2">
+            <p>&copy; <span id="year"></span> Aspen Services. All Rights Reserved.</p>
+            <p class="text-gray-600">Voice Commission</p>
+        </div>
+    </footer>
+
+    <!-- DISCORD WEBHOOK JAVASCRIPT -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // =========================================================================
+        // CONFIGURATION: PASTE YOUR DISCORD WEBHOOK URL BELOW
+        // Example: "https://discord.com/api/webhooks/123456789/abcdefghijklmnopqrstuvwxyz"
+        // =========================================================================
+        const DISCORD_WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL_HERE";
+
+        const form = document.getElementById('commission-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const statusBox = document.getElementById('form-status');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Extract form inputs
+            const name = document.getElementById('client-name').value.trim();
+            const contact = document.getElementById('client-contact').value.trim();
+            const projectType = document.getElementById('project-type').value;
+            const wordCount = document.getElementById('word-count').value.trim() || 'Not specified';
+            const budget = document.getElementById('budget').value.trim() || 'Not specified';
+            const scriptLink = document.getElementById('script-link').value.trim();
+            const notes = document.getElementById('project-notes').value.trim();
+
+            // Check if user updated the webhook URL placeholder
+            if (DISCORD_WEBHOOK_URL === "YOUR_DISCORD_WEBHOOK_URL_HERE" || !DISCORD_WEBHOOK_URL) {
+                showStatus("Please configure the DISCORD_WEBHOOK_URL variable inside the <script> tag to send requests!", "error");
+                return;
+            }
+
+            // Build clean Discord Rich Embed
+            const payload = {
+                username: "Voice Commission Bot",
+                avatar_url: "https://placehold.co/100x100/7B2CBF/ffffff?text=VO",
+                embeds: [
+                    {
+                        title: "🎙️ New Voice Commission Request!",
+                        color: 15087686, // Vibrant Red (#E63946)
+                        fields: [
+                            { name: "👤 Client Name", value: name, inline: true },
+                            { name: "💬 Contact Info", value: contact, inline: true },
+                            { name: "📁 Project Type", value: projectType, inline: true },
+                            { name: "📝 Word Count", value: wordCount, inline: true },
+                            { name: "💰 Budget", value: budget, inline: true },
+                            { name: "🔗 Script Link", value: scriptLink, inline: false },
+                            { name: "🎭 Voice Direction & Notes", value: notes, inline: false }
+                        ],
+                        timestamp: new Date().toISOString()
+                    }
+                ]
+            };
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> <span>Sending...</span>`;
+
+            try {
+                const response = await fetch(DISCORD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok || response.status === 204) {
+                    showStatus("✅ Success! Your voice commission request has been sent.", "success");
+                    form.reset();
+                } else {
+                    showStatus(`⚠️ Error sending request (Status: ${response.status}). Check Webhook URL.`, "error");
+                }
+            } catch (error) {
+                showStatus("❌ Could not connect to Discord. Check your internet connection or Webhook URL.", "error");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<i class="fa-brands fa-discord text-lg"></i> <span>Send Request to Discord</span>`;
+            }
+        });
+
+        function showStatus(message, type) {
+            statusBox.classList.remove('hidden', 'bg-emerald-500/20', 'text-emerald-400', 'border-emerald-500/30', 'bg-red-500/20', 'text-red-400', 'border-red-500/30');
+            statusBox.classList.add('border');
+            if (type === 'success') {
+                statusBox.classList.add('bg-emerald-500/20', 'text-emerald-400', 'border-emerald-500/30');
+            } else {
+                statusBox.classList.add('bg-red-500/20', 'text-red-400', 'border-red-500/30');
+            }
+            statusBox.textContent = message;
+        }
+    </script>
+</body>
+</html>
