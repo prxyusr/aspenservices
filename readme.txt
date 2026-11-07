@@ -1,1 +1,1 @@
-Aspen's voice acting commissions website,  test upload for viewing.
+Aspen's voice acting commissions website,  test upload via pages for viewing.
