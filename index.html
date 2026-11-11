@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,28 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0D0D11;
             color: #FFFFFF;
+            overflow-x: hidden;
         }
+        /* Radial background ambient gradient overlay */
+        .bg-glow {
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(123, 44, 191, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(230, 57, 70, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 50% 90%, rgba(157, 78, 221, 0.1) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Scroll reveal transition */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Style standard HTML audio element to match dark theme */
         audio::-webkit-media-controls-panel {
             background-color: #16151D;
@@ -45,67 +66,69 @@
         }
     </style>
 </head>
-<body class="selection:bg-themeRed selection:text-white antialiased">
+<body class="bg-glow selection:bg-themeRed selection:text-white antialiased min-h-screen">
 
     <!-- HEADER / NAVIGATION -->
-    <header class="border-b border-white/10 bg-themeBlack/90 sticky top-0 z-50 backdrop-blur-sm">
+    <header class="border-b border-white/10 bg-themeBlack/90 sticky top-0 z-50 backdrop-blur-md">
         <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-            <!-- EDIT YOUR BRANDING / NAME HERE -->
             <a href="#" class="flex items-center space-x-2">
                 <span class="w-3 h-3 rounded-full bg-themeRed inline-block"></span>
-                <span class="font-bold text-xl tracking-tight text-white">Aspen Services<span class="text-themePurpleLight text-sm font-medium"></span></span>
+                <span class="font-bold text-xl tracking-tight text-white">Aspen Services</span>
             </a>
 
             <nav class="hidden md:flex space-x-6 text-sm font-semibold text-gray-300">
                 <a href="#about" class="hover:text-white transition">About</a>
                 <a href="#demos" class="hover:text-white transition">Demos</a>
+                <a href="#projects" class="hover:text-white transition">Projects</a>
                 <a href="#rates" class="hover:text-white transition">Rates</a>
                 <a href="#tos" class="hover:text-white transition">Terms</a>
             </nav>
 
-            <a href="#order" class="bg-themeRed hover:bg-themeDarkRed text-white px-4 py-2 rounded-lg text-sm font-bold transition">
+            <a href="#order" class="bg-themeRed hover:bg-themeRedDark text-white px-4 py-2 rounded-lg text-sm font-bold transition shadow-lg shadow-themeRed/20">
                 Book Voice
             </a>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-10 space-y-16">
+    <main class="max-w-4xl mx-auto px-4 py-10 space-y-20">
 
         <!-- 1. HERO / ABOUT SECTION -->
-        <section id="about" class="bg-themeCard border border-white/10 rounded-2xl p-6 sm:p-10">
+        <section id="about" class="reveal-section bg-themeCard/90 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl">
             <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
                 
-<!-- EDIT PROFILE AVATAR / IMAGE HERE -->
-<div class="flex-shrink-0">
-    <img src="avatar.png.jpg" 
-         alt="Aspen Avatar" 
-         class="w-32 h-32 md:w-40 md:h-40 rounded-2xl border-2 border-themePurple object-cover" />
-</div>
+                <!-- PROFILE AVATAR WITH TIKTOK LINK -->
+                <div class="flex-shrink-0 group relative">
+                    <a href="https://www.tiktok.com/@akitoescheesecakee" target="_blank" rel="noopener noreferrer" class="block">
+                        <img src="avatar.png.jpg" 
+                             alt="Aspen Sona Art by @akitoescheesecakee" 
+                             class="w-32 h-32 md:w-40 md:h-40 rounded-2xl border-2 border-themePurple object-cover group-hover:opacity-85 transition duration-300 group-hover:scale-[1.02] shadow-xl" />
+                        <div class="absolute inset-0 bg-black/40 rounded-2xl opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-xs font-bold text-white gap-1.5">
+                            <i class="fa-brands fa-tiktok text-themeRed"></i> Art by @akitoescheesecakee
+                        </div>
+                    </a>
+                </div>
 
                 <div class="space-y-4 text-center md:text-left flex-grow">
                     <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <!-- EDIT YOUR STATUS HERE -->
                         <span>Commissions Open</span>
                     </div>
 
-                    <!-- EDIT YOUR NAME & BIO HERE -->
                     <h1 class="text-3xl sm:text-4xl font-extrabold text-white">
                         Hi, I'm <span class="text-themePurpleLight">Aspen</span>!
                     </h1>
 
                     <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                        <!-- EDIT YOUR SHORT BIO HERE -->
-                        I am a freelance voice actor specializing in character dialogue, indie video games, YouTube animations, and online promos. I record with professional studio equipment and deliver clean, high-quality audio with fast turnaround times.
+                        I am a freelance voice actor specializing in character dialogue, indie video games, YouTube animations, singing, and online promos. I record with professional studio equipment and deliver clean, high-quality audio with fast turnaround times.
                     </p>
 
-                    <!-- EDIT SOCIAL LINKS HERE -->
+                    <!-- SOCIAL LINKS -->
                     <div class="flex flex-wrap gap-3 pt-2 justify-center md:justify-start">
                         <a href="https://discord.com" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-gray-200 transition flex items-center space-x-2">
                             <i class="fa-brands fa-discord text-themePurpleLight"></i>
                             <span>aspen4030</span>
                         </a>
-                        <a href="https://www.tiktok.com/@" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-gray-200 transition flex items-center space-x-2">
+                        <a href="https://www.tiktok.com/@akitoescheesecakee" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-gray-200 transition flex items-center space-x-2">
                             <i class="fa-brands fa-tiktok text-themeRed"></i>
                             <span>@aspen_va</span>
                         </a>
@@ -119,71 +142,67 @@
             </div>
         </section>
 
-        <!-- 2. VOICE DEMOS / REELS -->
-        <section id="demos" class="space-y-6">
+        <!-- 2. VOICE DEMOS / REELS (SORTED BY CHARACTER + COMMERCIAL EXCEPTION) -->
+        <section id="demos" class="reveal-section space-y-6">
             <div>
                 <h2 class="text-2xl font-bold text-white flex items-center">
                     <span class="w-2.5 h-6 bg-themePurple rounded-full mr-3"></span> Voice Demos
                 </h2>
-                <p class="text-xs text-gray-400 mt-1">Listen to sample voice reels across different genres.</p>
+                <p class="text-xs text-gray-400 mt-1">Character voicelines and commercial demo reels.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 
-                <!-- DEMO ITEM 1 -->
-                <div class="bg-themeCard border border-white/10 rounded-xl p-5 space-y-3">
+                <!-- CHARACTER 1 PLACEHOLDER -->
+                <div class="bg-themeCard/90 border border-white/10 rounded-xl p-5 space-y-3 shadow-lg">
                     <div class="flex justify-between items-center">
-                        <h3 class="font-bold text-white text-base">Character & Video Games</h3>
+                        <h3 class="font-bold text-white text-base">[Character 1 - Placeholder]</h3>
                         <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themePurple/20 text-themePurpleLight border border-themePurple/30">Character</span>
                     </div>
-                    <p class="text-xs text-gray-400">Villains, heroes, NPCs, and energetic battle screams.</p>
+                    <p class="text-xs text-gray-400">Voicelines and dialogue reel for Character 1</p>
                     
-                    <!-- EDIT AUDIO SRC HERE -->
                     <audio controls class="w-full h-10 mt-2">
                         <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
 
-                <!-- DEMO ITEM 2 -->
-                <div class="bg-themeCard border border-white/10 rounded-xl p-5 space-y-3">
+                <!-- CHARACTER 2 PLACEHOLDER -->
+                <div class="bg-themeCard/90 border border-white/10 rounded-xl p-5 space-y-3 shadow-lg">
                     <div class="flex justify-between items-center">
-                        <h3 class="font-bold text-white text-base">Commercial & Trailers</h3>
+                        <h3 class="font-bold text-white text-base">[Character 2 - Placeholder]</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themePurple/20 text-themePurpleLight border border-themePurple/30">Character</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Voicelines and dialogue reel for Character 2</p>
+                    
+                    <audio controls class="w-full h-10 mt-2">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- CHARACTER 3 PLACEHOLDER -->
+                <div class="bg-themeCard/90 border border-white/10 rounded-xl p-5 space-y-3 shadow-lg">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-white text-base">[Character 3 - Placeholder]</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themePurple/20 text-themePurpleLight border border-themePurple/30">Character</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Voicelines and dialogue reel for Character 3</p>
+                    
+                    <audio controls class="w-full h-10 mt-2">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- COMMERCIAL EXCEPTION -->
+                <div class="bg-themeCard/90 border border-white/10 rounded-xl p-5 space-y-3 shadow-lg">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-white text-base">Commercial & Promos</h3>
                         <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themeRed/20 text-themeRed border border-themeRed/30">Commercial</span>
                     </div>
-                    <p class="text-xs text-gray-400">Deep cinematic narration, hype promos, and ad reads.</p>
+                    <p class="text-xs text-gray-400">Cinematic narration, promos, and commercial friend project</p>
                     
-                    <!-- EDIT AUDIO SRC HERE -->
-                    <audio controls class="w-full h-10 mt-2">
-                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-
-                <!-- DEMO ITEM 3 -->
-                <div class="bg-themeCard border border-white/10 rounded-xl p-5 space-y-3">
-                    <div class="flex justify-between items-center">
-                        <h3 class="font-bold text-white text-base">Animation & Cartoons</h3>
-                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themePurple/20 text-themePurpleLight border border-themePurple/30">Animation</span>
-                    </div>
-                    <p class="text-xs text-gray-400">Quirky, funny, and expressive voice acting for shorts.</p>
-                    
-                    <!-- EDIT AUDIO SRC HERE -->
-                    <audio controls class="w-full h-10 mt-2">
-                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-
-                <!-- DEMO ITEM 4 -->
-                <div class="bg-themeCard border border-white/10 rounded-xl p-5 space-y-3">
-                    <div class="flex justify-between items-center">
-                        <h3 class="font-bold text-white text-base">Short Memes / Alerts</h3>
-                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-themeRed/20 text-themeRed border border-themeRed/30">Personal</span>
-                    </div>
-                    <p class="text-xs text-gray-400">Twitch alerts, custom meme voicelines, and greetings.</p>
-                    
-                    <!-- EDIT AUDIO SRC HERE -->
                     <audio controls class="w-full h-10 mt-2">
                         <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -193,8 +212,101 @@
             </div>
         </section>
 
-        <!-- 3. RATES & PACKAGES -->
-        <section id="rates" class="space-y-6">
+        <!-- 3. SINGING DEMO SECTION -->
+        <section id="singing" class="reveal-section space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold text-white flex items-center">
+                    <span class="w-2.5 h-6 bg-pink-500 rounded-full mr-3"></span> Singing Demos
+                </h2>
+                <p class="text-xs text-gray-400 mt-1">Vocal range tests, musical samples, and solfège pitch exercises.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- SOLFEGE SCALE DEMO -->
+                <div class="bg-themeCard/90 border border-pink-500/30 rounded-xl p-5 space-y-3 shadow-lg">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-white text-base">Solfège Scale Demo</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-pink-500/20 text-pink-400 border border-pink-500/30">Vocal Scale</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Pitch accuracy & warm-up demonstration (solfège scale)</p>
+                    
+                    <audio controls class="w-full h-10 mt-2">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- GENERAL SINGING SAMPLE -->
+                <div class="bg-themeCard/90 border border-white/10 rounded-xl p-5 space-y-3 shadow-lg">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-white text-base">Character Singing / Melodic Sample</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-pink-500/20 text-pink-400 border border-pink-500/30">Musical</span>
+                    </div>
+                    <p class="text-xs text-gray-400">Short character song clips and harmonic vocal covers.</p>
+                    
+                    <audio controls class="w-full h-10 mt-2">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. PAST PROJECTS / FEATURED WORK -->
+        <section id="projects" class="reveal-section space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold text-white flex items-center">
+                    <span class="w-2.5 h-6 bg-emerald-500 rounded-full mr-3"></span> Past Projects & Works
+                </h2>
+                <p class="text-xs text-gray-400 mt-1">Highlighting previous voice commissions, indie collaborations, and featured works.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- PROJECT CARD 1 -->
+                <div class="bg-themeCard/90 border border-white/10 rounded-xl p-5 space-y-3 flex flex-col justify-between shadow-lg hover:border-emerald-500/40 transition">
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Indie Project</span>
+                        <h3 class="text-lg font-bold text-white">[Project Title 1]</h3>
+                        <p class="text-xs text-gray-400">N/A</p>
+                    </div>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gray-500">
+                        <span>Role: N/A</span>
+                        <span class="text-emerald-400"><i class="fa-solid fa-circle-check mr-1"></i> Completed</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 2 -->
+                <div class="bg-themeCard/90 border border-white/10 rounded-xl p-5 space-y-3 flex flex-col justify-between shadow-lg hover:border-emerald-500/40 transition">
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Animation</span>
+                        <h3 class="text-lg font-bold text-white">[Project Title 2]</h3>
+                        <p class="text-xs text-gray-400">N/A</p>
+                    </div>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gray-500">
+                        <span>Role: N/A</span>
+                        <span class="text-emerald-400"><i class="fa-solid fa-circle-check mr-1"></i> Released</span>
+                    </div>
+                </div>
+
+                <!-- PROJECT CARD 3 -->
+                <div class="bg-themeCard/90 border border-white/10 rounded-xl p-5 space-y-3 flex flex-col justify-between shadow-lg hover:border-emerald-500/40 transition">
+                    <div class="space-y-2">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Commercial / Promo</span>
+                        <h3 class="text-lg font-bold text-white">[Friend's Commercial Project]</h3>
+                        <p class="text-xs text-gray-400">N/A</p>
+                    </div>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gray-500">
+                        <span>Role: N/A</span>
+                        <span class="text-amber-400"><i class="fa-solid fa-clock mr-1"></i> In Progress</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. RATES & PACKAGES -->
+        <section id="rates" class="reveal-section space-y-6">
             <div>
                 <h2 class="text-2xl font-bold text-white flex items-center">
                     <span class="w-2.5 h-6 bg-themeRed rounded-full mr-3"></span> Rates & Pricing
@@ -205,23 +317,22 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
                 <!-- RATE CARD 1 -->
-                <div class="bg-themeCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                <div class="bg-themeCard/90 border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-lg">
                     <div>
                         <span class="text-xs font-bold uppercase text-themePurpleLight tracking-wider">Tier 1</span>
                         <h3 class="text-xl font-bold text-white mt-1">Short Clips & Memes</h3>
                         <p class="text-xs text-gray-400 mt-1">Twitch alerts, short meme voiceovers, personal audio messages.</p>
 
                         <div class="my-4">
-                            <!-- EDIT PRICE HERE -->
                             <span class="text-3xl font-extrabold text-white">$15</span>
-                            <span class="text-xs text-gray-400"> / 5$ Every minute above 2</span>
+                            <span class="text-xs text-gray-400"> / $5 Every minute above 2</span>
                         </div>
 
                         <ul class="text-xs text-gray-300 space-y-2">
                             <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> Flexible delivery</li>
                             <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> High quality WAV/MP3</li>
                             <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> 1 free re-take</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> $4 for re-takes</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-themePurpleLight mr-2"></i> $4 for additional re-takes</li>
                         </ul>
                     </div>
                     <a href="#order" class="block w-full py-2.5 text-center bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg font-bold text-xs text-white transition">
@@ -230,8 +341,8 @@
                 </div>
 
                 <!-- RATE CARD 2 (FEATURED) -->
-                <div class="bg-themeCard border-2 border-themeRed rounded-2xl p-6 flex flex-col justify-between space-y-4 relative">
-                    <div class="absolute -top-3 right-4 bg-themeRed text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">
+                <div class="bg-themeCard/90 border-2 border-themeRed rounded-2xl p-6 flex flex-col justify-between space-y-4 relative shadow-xl">
+                    <div class="absolute -top-3 right-4 bg-themeRed text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow">
                         Most Popular
                     </div>
                     <div>
@@ -240,7 +351,6 @@
                         <p class="text-xs text-gray-400 mt-1">Character dialogue, video game voices, Animations.</p>
 
                         <div class="my-4">
-                            <!-- EDIT PRICE HERE -->
                             <span class="text-3xl font-extrabold text-white">$30 - $50</span>
                             <span class="text-xs text-gray-400"> / Extremely flexible pricing</span>
                         </div>
@@ -252,20 +362,19 @@
                             <li class="flex items-center"><i class="fa-solid fa-check text-themeRed mr-2"></i> Indie commercial rights</li>
                         </ul>
                     </div>
-                    <a href="#order" class="block w-full py-2.5 text-center bg-themeRed hover:bg-themeRedDark rounded-lg font-bold text-xs text-white transition">
+                    <a href="#order" class="block w-full py-2.5 text-center bg-themeRed hover:bg-themeRedDark rounded-lg font-bold text-xs text-white transition shadow">
                         Select Plan
                     </a>
                 </div>
 
                 <!-- RATE CARD 3 -->
-                <div class="bg-themeCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4">
+                <div class="bg-themeCard/90 border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-lg">
                     <div>
                         <span class="text-xs font-bold uppercase text-themePurpleLight tracking-wider">Tier 3</span>
                         <h3 class="text-xl font-bold text-white mt-1">Commercial / Large</h3>
                         <p class="text-xs text-gray-400 mt-1">Promotional trailers, corporate videos, long scripts.</p>
 
                         <div class="my-4">
-                            <!-- EDIT PRICE HERE -->
                             <span class="text-3xl font-extrabold text-white">$55+</span>
                             <span class="text-xs text-gray-400"> / custom quote</span>
                         </div>
@@ -284,23 +393,22 @@
             </div>
         </section>
 
-        <!-- 4. TERMS OF SERVICE (TOS) -->
-        <section id="tos" class="bg-themeCard border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4">
+        <!-- 6. TERMS OF SERVICE (TOS) -->
+        <section id="tos" class="reveal-section bg-themeCard/90 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl">
             <h2 class="text-xl font-bold text-white flex items-center">
                 <i class="fa-solid fa-file-contract text-themePurpleLight mr-3"></i> Terms of Service & Guidelines
             </h2>
 
             <ul class="space-y-3 text-xs sm:text-sm text-gray-300 leading-relaxed list-disc list-inside">
-                <!-- EDIT TOS RULES BELOW -->
                 <li><strong class="text-white">Payment:</strong> Payment is upfront via Paypal and/or Cashapp before final clean audio files are sent.</li>
                 <li><strong class="text-white">Revisions:</strong> Minor tone/speed tweaks are included. Full script rewrites require an extra fee.</li>
                 <li><strong class="text-white">Restrictions:</strong> Absolutely no AI voice cloning, hate speech, or harassment scripts.</li>
-                <li><strong class="text-white">Notice:</strong> Rules are entirely up too my discretion.</li>
+                <li><strong class="text-white">Notice:</strong> Rules are entirely up to my discretion.</li>
             </ul>
         </section>
 
-        <!-- 5. COMMISSION FORM (DISCORD WEBHOOK INTEGRATION) -->
-        <section id="order" class="space-y-6">
+        <!-- 7. COMMISSION FORM (DISCORD WEBHOOK INTEGRATION) -->
+        <section id="order" class="reveal-section space-y-6">
             <div>
                 <h2 class="text-2xl font-bold text-white flex items-center">
                     <span class="w-2.5 h-6 bg-themePurple rounded-full mr-3"></span> Submit Voice Request
@@ -308,13 +416,13 @@
                 <p class="text-xs text-gray-400 mt-1">Fill out your project details below. Submissions go straight to my Discord!</p>
             </div>
 
-            <div class="bg-themeCard border border-white/10 rounded-2xl p-6 sm:p-8">
+            <div class="bg-themeCard/90 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
                 <form id="commission-form" class="space-y-5">
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Aspen</label>
-                            <input type="text" id="client-name" required placeholder="e.g. Aspen" 
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Your Name / Handle *</label>
+                            <input type="text" id="client-name" required placeholder="e.g. Client Name" 
                                 class="w-full bg-themeBlack border border-white/15 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition">
                         </div>
                         <div>
@@ -328,9 +436,10 @@
                         <div>
                             <label class="block text-xs font-semibold text-gray-300 mb-1.5">Project Type</label>
                             <select id="project-type" class="w-full bg-themeBlack border border-white/15 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition">
+                                <option value="Character Dialogue">Character Dialogue</option>
                                 <option value="Indie Game">Indie Game</option>
                                 <option value="Animation">Animation / Cartoon</option>
-                                <option value="Meme / Personal">Meme / Personal Greeting</option>
+                                <option value="Singing / Vocals">Singing / Vocals</option>
                                 <option value="Commercial">Commercial / Promo</option>
                                 <option value="Other">Other</option>
                             </select>
@@ -355,12 +464,12 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-gray-300 mb-1.5">Voice Direction & Tone Notes *</label>
-                        <textarea id="project-notes" rows="4" required placeholder="Describe the voice style, pitch, emotion, or character references." 
+                        <textarea id="project-notes" rows="4" required placeholder="Describe the character style, pitch, emotion, or reference voices." 
                             class="w-full bg-themeBlack border border-white/15 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-themePurple transition"></textarea>
                     </div>
 
                     <button type="submit" id="submit-btn" 
-                        class="w-full py-3.5 bg-themeRed hover:bg-themeRedDark text-white font-bold rounded-lg transition flex items-center justify-center space-x-2 text-sm">
+                        class="w-full py-3.5 bg-themeRed hover:bg-themeRedDark text-white font-bold rounded-lg transition flex items-center justify-center space-x-2 text-sm shadow-lg shadow-themeRed/20">
                         <i class="fa-brands fa-discord text-lg"></i>
                         <span>Send Request to Discord</span>
                     </button>
@@ -377,19 +486,35 @@
     <footer class="border-t border-white/10 py-8 mt-12 text-center text-xs text-gray-500">
         <div class="max-w-4xl mx-auto px-4 space-y-2">
             <p>&copy; <span id="year"></span> Aspen Services. All Rights Reserved.</p>
-            <p class="text-gray-600">Voice Commission</p>
+            <p class="text-gray-600">Voice Commissions</p>
         </div>
     </footer>
 
-    <!-- DISCORD WEBHOOK JAVASCRIPT -->
+    <!-- INTERSECTION OBSERVER & DISCORD WEBHOOK JAVASCRIPT -->
     <script>
         // Set dynamic copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // =========================================================================
-        // CONFIGURATION: PASTE YOUR DISCORD WEBHOOK URL BELOW
-        // Example: "https://discord.com/api/webhooks/123456789/abcdefghijklmnopqrstuvwxyz"
-        // =========================================================================
+        // 1. SCROLL REVEAL / SECTION FADE-IN ON SCROLL
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // 2. DISCORD WEBHOOK CONFIGURATION
         const DISCORD_WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL_HERE";
 
         const form = document.getElementById('commission-form');
@@ -399,7 +524,6 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Extract form inputs
             const name = document.getElementById('client-name').value.trim();
             const contact = document.getElementById('client-contact').value.trim();
             const projectType = document.getElementById('project-type').value;
@@ -408,20 +532,18 @@
             const scriptLink = document.getElementById('script-link').value.trim();
             const notes = document.getElementById('project-notes').value.trim();
 
-            // Check if user updated the webhook URL placeholder
             if (DISCORD_WEBHOOK_URL === "YOUR_DISCORD_WEBHOOK_URL_HERE" || !DISCORD_WEBHOOK_URL) {
                 showStatus("Please configure the DISCORD_WEBHOOK_URL variable inside the <script> tag to send requests!", "error");
                 return;
             }
 
-            // Build clean Discord Rich Embed
             const payload = {
                 username: "Voice Commission Bot",
                 avatar_url: "https://placehold.co/100x100/7B2CBF/ffffff?text=VO",
                 embeds: [
                     {
                         title: "🎙️ New Voice Commission Request!",
-                        color: 15087686, // Vibrant Red (#E63946)
+                        color: 15087686,
                         fields: [
                             { name: "👤 Client Name", value: name, inline: true },
                             { name: "💬 Contact Info", value: contact, inline: true },
@@ -436,7 +558,6 @@
                 ]
             };
 
-            // Loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> <span>Sending...</span>`;
 
